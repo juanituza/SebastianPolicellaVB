@@ -1,0 +1,46 @@
+/* --------------------------------------------------------------------
+# IMG PRODUCTO 
+-------------------------------------------------------------------- */
+.img-producto {
+  width: 250px; ;
+  height: 250px;
+  text-align: center;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+
+.texto-card{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 15px;
+  text-align: center;
+  object-fit: cover;
+  box-shadow: 0 4px 12px #C2A878;
+  border-radius: 16px;
+  display: inline-flex; /* Asegura que pueda escalar */
+
+}
+
+.img-producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.texto-card:hover{
+ transform: scale(5.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
