@@ -11,31 +11,20 @@
 
 ## Sobre mi proyecto
 
-Este proyecto fue desarrollado como parte del curso de **React.js** en [CoderHouse](https://www.coderhouse.com). Se trata de una tienda en línea que utiliza **Firebase** como base de datos, permitiendo la gestión eficiente de productos y compras. La aplicación integra un sistema de carrito de compras y procesamiento de pedidos en tiempo real.
+🍷 Tienda de Vinos Boutique
+Este proyecto es una tienda online enfocada en vinos boutique, desarrollada de forma freelance para un cliente del rubro vitivinícola. La aplicación permite visualizar productos, acceder al detalle de cada vino, navegar por categorías y simular un proceso de compra, con un diseño atractivo y una experiencia de usuario fluida.
 
-### **`Características principales:`**
+🛠️ **`Tecnologías utilizadas`**
+- **React JS** – Librería principal para la construcción de la interfaz de usuario.
 
-- **Tecnología principal:** React.js 
-- **Plugin-react** : Vitejs
-- **Base de datos:** Firebase
-- **Funcionalidades:** 
-  - Carrito de compras
-  - Navegación por categorías
-  - Procesamiento de pedidos en tiempo real
-  - Manejo de HOC
-  - Utilización de custon Hooks
-  - Manejo de validación de formularios a través de **YUP**
+- **React Router DOM** – Para la navegación entre vistas sin recargar la página.
 
-#### Dependencias
+- **Bootstrap 5** – Framework CSS para el diseño responsivo y componentes visuales.
 
-- `Firebase` 
-- `React` 
-- `React-dom `
-- `React-router-dom`
-- `React-icons`
-- `React-spinners`
-- `Sweetalert2`
-- `Yup` 
+- **Firebase** – Firestore para la base de datos en la nube y gestión dinámica de productos.
+
+- **Git & GitHub** – Control de versiones y hospedaje del repositorio.
+
 
 ### Contacto
 
