@@ -271,14 +271,15 @@ a {
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
-.lavishly-yours-regular {
-  font-family: "Lavishly Yours", cursive;
-  font-weight: 400;
+.titulo-vino {
+  font-family: 'Cinzel', serif;
+  font-size: 70px;
+  font-weight: 500;
   color: #C2A878;
   font-style: normal;
-  text-decoration: none !important;
+  
 }
-.lavishly-yours-regular :hover {
+.titulo-vino :hover {
   color: #C2A878;
 }
 #hero h1 span {

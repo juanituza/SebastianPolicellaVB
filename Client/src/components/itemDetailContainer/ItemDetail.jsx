@@ -1,43 +1,75 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-
-
-import { CartContext } from "../../context/CartContext";
-import ItemCount from "../ItemCount/ItemCount";
-
-import Swal from "sweetalert2";
-
+import useFetch from "../../hooks/useFetch.jsx";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ product }) => {
- 
+const ItemDetail = () => {
+  const { productos, cargando } = useFetch();
+
+  const ordenCampos = ["nombre", "cepa", "ubicacion", "VINIFICACIÓN"];
+
+  const formatearCampo = (campo) => {
+    const nombresBonitos = {
+      nombre: "Nombre",
+      cepa: "Cepa",
+      ubicacion: "Ubicación",
+      VINIFICACIÓN: "Vinificación",
+    };
+
+    return nombresBonitos[campo] || campo
+      .replace(/_/g, " ")
+      .replace(/^\w/, (l) => l.toUpperCase());
+  };
+
+  if (cargando) {
+    return <p className="text-center my-5">Cargando productos...</p>;
+  }
 
   return (
-    <>
-      <div id="detail" className="mt-5 row align-items-center d-flex   ">
-        <div className="col-12 align-items-center d-flex flex-column">
-            <p className="texto-card fs-4 fw-bold text-uppercase align-items-center">{product.nombre}</p>
+    <div className="container my-5">
+      <h2 className="text-center texto-card mb-5 text-uppercase">
+        {productos[0]?.categoria || "Categoría"}
+      </h2>
+
+      {productos.map((product) => (
+        <div
+          key={product.id}
+          className="row mb-5 p-4 border rounded shadow-sm align-items-start"
+        >
+          {/* Imagen */}
+          <div className="col-md-3 mb-3">
+            <img
+              src={product.imagen}
+              alt={product.nombre}
+              className="img-fluid rounded shadow img-producto"
+            />
           </div>
-        <div className="col-3 ms-5 d-flex flex-column">
-         <img src={product.imagen} alt={product.nombre} className="img-producto" />
-          
+
+          {/* Ficha de datos */}
+          <div className="col-md-9">
+            <dl className="row">
+              {ordenCampos
+                .filter((key) => key in product)
+                .map((key) => (
+                  <div key={key} className="col-12 row mb-2">
+                    <dt className="col-sm-4 fw-bold texto-black">
+                      {formatearCampo(key)}:
+                    </dt>
+                    <dd className="col-sm-8 texto-black " >
+                      {product[key]}
+                    </dd>
+                  </div>
+                ))}
+            </dl>
+          </div>
         </div>
-        <div className="col-8  ">
-          
-          
-          <p className="texto-black">{product.nombre}</p>
-          <p className="texto-black">{product.categoria}</p>
-          <p className="texto-black ">{product.descripcion}</p>
-         
-        </div>
-        <div className="detail-text my-5 d-flex justify-content-center">
-          <Link to="/" className="btn btn-secondary col-3 ms-4 justify-content-center">
-            Back
-          </Link>
-        </div>
+      ))}
+
+      <div className="text-center mt-4">
+        <Link to="/" className="btn btn-warning">
+          Volver al inicio
+        </Link>
       </div>
-      
-    </>
+    </div>
   );
 };
 

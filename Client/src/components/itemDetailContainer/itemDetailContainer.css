@@ -3,33 +3,32 @@
 --------------------------------------------------------------*/
 #detail-container {
   width: 100%;
-  height: 100vh;
-  background: rgba(226, 226, 226, 0.9);
-  position: absolute;
+  min-height: 100vh; 
+  background: #f5f1f1 ;
+  position: relative; 
   padding: 0;
 }
+
 #detail {
-  
- 
-  background: rgba(226, 226, 226, 0.9);
-  position: absolute;
-  padding: 100px;
+  background: #f5f1f1;
+  position: relative; 
+  padding: 100px 15px; 
 }
 
-/* Eliminamos la oscuridad */
+
 #detail:before {
   content: "";
-  background: rgba(0, 0, 0, 0); /* Completamente transparente */
+  background: rgba(0, 0, 0, 0);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
 }
 
-#detail .container {
-  padding-top: 10px;
-}
+
+
 
 @media (max-width: 992px) {
   #detail .container {
@@ -50,17 +49,7 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
-.lavishly-yours-regular {
-  font-family: "Lavishly Yours", cursive;
-  font-weight: 400;
-  color: #C2A878;
-  font-style: normal;
-  text-decoration: none !important;
-}
 
-.lavishly-yours-regular :hover {
-  color: #C2A878;
-}
 
 #detail h1 span {
   color: #C2A878;

@@ -11,14 +11,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function Home() {
   const { productos, cargando } = useFetch();
 
-  // Nombres que querés mostrar con link
-  const nombresProductosDeseados = ["Sociedad secreta", "Gran referente", "Pura Rebeldía"];
-
   // Buscar los productos por título
-  const productosFiltrados = productos.filter(producto =>
-    nombresProductosDeseados.includes(producto.nombre)
-  );
+  const categoriasUnicas = [...new Set(productos.map(producto => producto.categoria))];
 
+  
 
 
   useEffect(() => {
@@ -43,7 +39,7 @@ function Home() {
               <div className="row">
                 <div className="col-lg-8">
                   <h2 >Bienvenidos a</h2>
-                  <h1 className="my-3"> <span className="lavishly-yours-regular">Sebastian Policella</span></h1>
+                  <p className="my-3  titulo-vino"> El Arte del Vino</p>
                   <h2>Vinos boutique</h2>
 
                   <div className="btns">
@@ -71,22 +67,33 @@ function Home() {
                 <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                   <h3 className="fst-italic">Guiar con las palabras, Inspirar con el ejemplo.</h3>
                   <p className="fst-italic">
-                    En Sebastián Pollicella, nos dedicamos con pasión a seleccionar y ofrecer vinos boutique de alta calidad,
+                    En el arte del vino , nos dedicamos con pasión a seleccionar y ofrecer vinos boutique de alta calidad,
                     cuidadosamente elaborados en el corazón del Valle de Uco, Mendoza.
                     Nuestra misión es acercar al consumidor experiencias únicas a través de etiquetas con identidad, historia y carácter.
                     Nos enorgullece representar vinos como:
                   </p>
 
-                  <ul>
-                    {productosFiltrados.map(producto => (
-                      <li key={producto.id} className="fst-italic">
+                  {/* <ul>
+                    {categoriasUnicas.map(producto => (
+                      <li key={producto.categoria} className="fst-italic">
                         <i className="bi bi-check-circle"></i>{" "}
-                        <Link to={`/detalle/${producto.id}`} className=" bodega">
-                          {producto.nombre}
+                        <Link to={`/categoria/${producto.categoria}`} className="bodega">
+                    {producto.categoria}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul> */}
+                  <ul>
+                    {categoriasUnicas.map((categoria) => (
+                      <li key={categoria}>
+                        <i className="bi bi-check-circle circle"></i>
+                        <Link to={`/categoria/${categoria}`} className="bodega">
+                          {categoria}
                         </Link>
                       </li>
                     ))}
                   </ul>
+
 
                   <p className="fst-italic">
                     En cada botella hay una historia, un origen, y una rebeldía que se expresa con autenticidad. Te invitamos a descubrirlos y ser parte de este viaje sensorial.

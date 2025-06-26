@@ -39,7 +39,7 @@ const useFetch = () => {
     try {
       if (idCategoria) {
         const productosRef = collection(db, "bodegas");
-        const q = query(productosRef, where("category", "==", idCategoria));
+        const q = query(productosRef, where("categoria", "==", idCategoria));
 
         const dataDb = await getDocs(q);
 

@@ -1,6 +1,18 @@
-.body {
-    margin: 0px;
-    padding: 0px;
-    
+html, .body {
+  margin: 0;
+  padding: 0;
+  background: #f5f1f1; /* el mismo que usás en #detail-container */
+  min-height: 100vh;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#detail-container {
+  flex: 1;
+  background: #f5f1f1;
+  padding: 0;
+}
