@@ -8,7 +8,8 @@
   text-align: center;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: #ffffff ;
+  box-shadow: 0 4px 12px rgba(27, 27, 26, 0.404);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: flotar 3s ease-in-out infinite;
 }
@@ -20,28 +21,40 @@
   margin-top: 225px;
   margin-bottom: 200px;
   text-align: center;
-  color: #C2A878;
+  color: #94651E;
   /* object-fit: cover; */
-  box-shadow: 0 4px 12px #C2A878;
+  /* box-shadow: 0 4px 12px #94651E;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
+  border-radius: 16px; */
   /* display: inline-flex; */
 
 }
 
 .img-producto:hover {
   /* transform: scale(1.05); */
-  box-shadow: 0 8px 20px rgba(223, 10, 10, 0.3);
+  box-shadow: 0 8px 20px rgba(107, 64, 0, 0.3);
 }
 
 .texto-card:hover{
- 
-  box-shadow: 0 4px 12px #C2A878;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:  #C2A878;
+    transition-duration: 0.2s ;
+  /* box-shadow: 0 4px 12px #C2A878;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; */
   
 }
 
+.nombre {
+  margin: 30px 0 50px 0;
+  text-align: center;
+  color: #744c10;
+  text-transform: uppercase ;
+}
 
+.carta{
+  box-shadow: 0 4px 12px #94651E;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+}
 @keyframes flotar {
   0%, 100% {
     transform: translateY(0px);

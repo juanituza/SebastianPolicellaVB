@@ -1,4 +1,4 @@
-# Proyecto EL ARTE DEL VINO
+# El arte del vino
 
 ### ` DEV - Juan Ignacio Mc Kenna`
 <div style="display: flex; justify-content: space-around;">
